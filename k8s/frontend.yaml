@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: acs-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: acs-frontend
+  template:
+    metadata:
+      labels:
+        app: acs-frontend
+    spec:
+      containers:
+      - name: frontend
+        image: piyushdocs/acs-client:v1
+        ports:
+        - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: acs-frontend-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: acs-frontend
+  ports:
+    - port: 3000
+      targetPort: 3000

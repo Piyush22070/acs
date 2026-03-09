@@ -1,0 +1,43 @@
+# --- Byte-compiled / optimized / DLL files ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Virtual Environments ---
+# It's best to exclude these and let users install from requirements.txt
+venv/
+.venv/
+env/
+ENV/
+bin/
+lib/
+include/
+
+# --- Environment Variables (CRITICAL) ---
+# This prevents your API keys and secrets from being committed
+.env
+.env.local
+.env.shared-spec.yml
+*.env
+
+# --- OS / IDE Specific ---
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# --- Distribution / Packaging ---
+dist/
+build/
+*.egg-info/
+
+# --- Logs and Databases ---
+*.log
+local_database.db
+*.sqlite3
+
+# --- Project Specific (Ceres / FastAPI) ---
+# If you use temporary storage for Whisper or LLM outputs
+temp_audio/
+outputs/
